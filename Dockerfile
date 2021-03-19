@@ -1,4 +1,4 @@
-FROM --platform=arm64 debian:stable-slim
+FROM debian:stable-slim
 # intial setup
 WORKDIR /root
 # Updating and upgrading
