@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<title>k1d'5 h4ck3r t00l5</title>
+		<link href="static/hacker.css" rel="stylesheet">
+	</head>
+	<body>
+		<h1>k1d'5 h4ck3r t00l5</h1>
+		<hr/>
+		<div style="width: 100%; display: table;">
+			<div style="display: table-cell; width: 50%">
+				<h2>nmap</h2>
+				<h4>scan top 100 ports on an ip</h4>
+				<form action="/" method="post">
+					<label for="ip">ip: </label>
+					<input type="text" id="ip" name="ip"><br/><br/>
+					<input type="submit" value="scan" name="action">
+				</form>
+			</div>
+			<div style="display: table-cell; width: 50%;">
+				<p style="white-space: pre-wrap;">{{ scan }}</p>
+				<p class="text-danger" style="white-space: pre-wrap;">{{ scanerror }}</p>
+			</div>
+		</div>
+		<hr/>
+		<div style="width: 100%; display: table;">
+			<div style="display: table-cell; width: 50%">
+				<h2>payloads</h2>
+				<h4>venom it up - gen rev tcp meterpreter bins</h4>
+				<form action="/" method="post" enctype="multipart/form-data">
+					<label for="os">os: </label>
+					<select name="os" id="os">
+						<option value="windows">windows</option>
+						<option value="linux">linux</option>
+						<option valud="android">android</option>
+					</select><br/></br/>
+					<label for="lhost">lhost: </label>
+					<input type="text" id="lhost" name="lhost"><br/><br/>
+					<label for="template">template file (optional): </label>
+					<input type="file" id="template" name="template"><br/><br/>
+					<input type="submit" value="generate" name="action">
+				</form>
+			</div>
+			<div style="display: table-cell; width: 50%;">
+				{% if fn %}
+				<ul>
+					<li>payload:  {{ payload }}</li>
+					<li>LHOST:    {{ lhost }}</li>
+					<li>LPORT:    {{ lport }}</li>
+					<li>template: {{ template }}</li>
+					<li>download: <a href="/static/payloads/{{ fn }}">{{ fn }}</a></li>
+					<li>expires:  5 mins</li>
+				</ul>
+				{% endif %}
+				<p class="text-danger" style="white-space: pre-wrap;">{{ payloaderror }}</p>
+			</div>
+		</div>
+		<hr/>
+		<div style="width: 100%; display: table;">
+			<div style="display: table-cell; width: 50%">
+				<h2>sploits</h2>
+				<h4>searchsploit FTW</h4>
+				<form action="/" method="post">
+					<label for="search">search: </label>
+					<input type="text" id="search" name="search"><br/><br/>
+					<input type="submit" value="searchsploit" name="action">
+
+				</form>
+			</div>
+			<div style="display: table-cell; width: 50%;">
+				<p style="white-space: pre;">{{ searchsploit }}</p>
+				<p class="text-danger">{{ sserror }}</p>
+			</div>
+		</div>
+	</body>
+</html>
+
