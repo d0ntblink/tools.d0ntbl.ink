@@ -1,8 +1,11 @@
-FROM alpine:latest
+FROM debian:stable-slim
 # intial setup
 WORKDIR /root
+# Updating and upgrading
+RUN apt update
+RUN apt upgrade -y
 # Installing packages and python liberaries
-RUN apk add --no-cache bash python3 py3-pip git nmap
+RUN apt install -y nmap python3 python3-pip git
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 # Installing searchexploit
