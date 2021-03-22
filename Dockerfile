@@ -2,7 +2,7 @@ FROM alpine:latest
 # intial setup
 WORKDIR /root
 # Installing packages and python liberaries
-RUN apk add --no-cache bash python3 py3-pip git
+RUN apk add --no-cache bash python3 py3-pip git nmap
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 # Installing searchexploit
