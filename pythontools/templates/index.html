@@ -11,7 +11,7 @@
 		<div style="width: 100%; display: table;">
 			<div style="display: table-cell; width: 50%">
 				<h2>Nmap</h2>
-				<h4>scan top 100 ports on an ip</h4>
+				<h4>scan top 100 ports on an IP</h4>
 				<form action="/" method="post">
 					<label for="ip">ip: </label>
 					<input type="text" id="ip" name="ip"><br/><br/>
@@ -26,41 +26,8 @@
 		<hr/>
 		<div style="width: 100%; display: table;">
 			<div style="display: table-cell; width: 50%">
-				<h2>payloads</h2>
-				<h4>venom it up - gen rev tcp meterpreter bins</h4>
-				<form action="/" method="post" enctype="multipart/form-data">
-					<label for="os">os: </label>
-					<select name="os" id="os">
-						<option value="windows">windows</option>
-						<option value="linux">linux</option>
-						<option valud="android">android</option>
-					</select><br/></br/>
-					<label for="lhost">lhost: </label>
-					<input type="text" id="lhost" name="lhost"><br/><br/>
-					<label for="template">template file (optional): </label>
-					<input type="file" id="template" name="template"><br/><br/>
-					<input type="submit" value="generate" name="action">
-				</form>
-			</div>
-			<div style="display: table-cell; width: 50%;">
-				{% if fn %}
-				<ul>
-					<li>payload:  {{ payload }}</li>
-					<li>LHOST:    {{ lhost }}</li>
-					<li>LPORT:    {{ lport }}</li>
-					<li>template: {{ template }}</li>
-					<li>download: <a href="/static/payloads/{{ fn }}">{{ fn }}</a></li>
-					<li>expires:  5 mins</li>
-				</ul>
-				{% endif %}
-				<p class="text-danger" style="white-space: pre-wrap;">{{ payloaderror }}</p>
-			</div>
-		</div>
-		<hr/>
-		<div style="width: 100%; display: table;">
-			<div style="display: table-cell; width: 50%">
-				<h2>Searchsploits</h2>
-				<h4>searchsploit FTW</h4>
+				<h2>SearchSploits</h2>
+				<h4>Search sploit-db for vulnrabilities</h4>
 				<form action="/" method="post">
 					<label for="search">search: </label>
 					<input type="text" id="search" name="search"><br/><br/>
@@ -73,5 +40,8 @@
 				<p class="text-danger">{{ sserror }}</p>
 			</div>
 		</div>
+        <hr/>
+        <a class="nav-link" href="https://d0ntbl.ink">🚪◀ Home Page</a>
+        <div id="footer">Made with <span style="color: #e25555;">&hearts;</span> by d0ntblink - 2021</div>
 	</body>
 </html>
